@@ -19,7 +19,8 @@ $(document).ready(function() {
     q6 = $("#q6");
 
   // RESULT PAGES
-  var emergencyInfo = $("#emergencyInfo"),
+  var wagesubsidiesInfo = $("#wagesubsidiesInfo"),
+    noHelp = $("#noHelp"),
     callNurse = $("#callNurse"),
     selfIsolate = $("#selfIsolate"),
     unlikelyCovid19 = $("#unlikelyCovid19"),
@@ -27,7 +28,7 @@ $(document).ready(function() {
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, emergencyInfo];
+  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, wagesubsidiesInfo, noHelp];
 
   var footer = $("footer");
 
@@ -130,16 +131,16 @@ $(document).ready(function() {
   });
 
   // q1 btns
-  $("#emergencyCheckYes").click(function() {
+  $("#revenuedropNo").click(function() {
     prev = q1;
     disable(q1);
-    reveal(emergencyInfo);
+    reveal(noHelp);
     stack.push(q1);
   });
-  $("#emergencyCheckNo").click(function() {
+  $("#revenuedropYes").click(function() {
     prev = q1;
     disable(q1);
-    reveal(q2);
+    reveal(wagesubsidiesInfo);
     stack.push(q1);
   });
 
