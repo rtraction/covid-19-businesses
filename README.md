@@ -1,8 +1,8 @@
-# COVID-19 Self Assessment Tool
+# COVID-19 Business Self Assessment Tool
 
-**NOTE:** This tool is not intended to provide medical advice. If you have medical questions, consult your local health authority.
+**NOTE:** This tool was forked off an existing tool ongov / covid-19-self-assessment - most info here is taken from it, too
 
-The tool takes the public through a series of questions to inform those who are concerned they may have contracted COVID-19. It's based on a modified version of the Alberta Health Services tool to which we have applied Ontario design system styling and made a number of functional changes. Those changes include but are not limited to:
+This tool is supposed to help businesses in Ontario to quickly check for possible financial support during the Covid-19 crisis. Its parent is based on a modified version of the Alberta Health Services tool to which we have applied Ontario design system styling and made a number of functional changes. Those changes include but are not limited to:
 
 - Changed logic and flow of the application to fit the message Ontario Health wanted to convey
 - Changed markup to fit our design and to conform to HTML standards
