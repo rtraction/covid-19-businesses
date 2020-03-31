@@ -14,7 +14,7 @@ This tool is supposed to help businesses in Ontario to quickly check for possibl
 
 Because the tool is comprised of static HTML/JS/CSS files, it can be hosted anywhere and cached in the CDN for optimum performance. We have verified compatibility with a range of desktop and mobile browsers. Internet Explorer 10 and higher and Edge (all versions) are supported in addition to more popular browsers.
 
-## KNOWN ISSUES
+## KNOWN ISSUES (inherited from parent tool)
 
 - There is a bug in using back/forward buttons on Internet Explorer 10 and 11
 - There is an issue with some screen readers with the skip to main content button

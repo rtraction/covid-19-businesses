@@ -1,3 +1,3 @@
-Adapted from and with thanks to Alberta Health Services.
+Adapted from and with thanks to Alberta Health Services and the Government of Ontario's "covid-19-self-assessment" tool
 
-©2020 Queen’s Printer for Ontario
+©2020 Ben Glauss for rTraction
