@@ -139,13 +139,13 @@ $(document).ready(function() {
   });
   $("#businessSizeM").click(function() {
     prev = q1;
-    disable(q2);
-    reveal(noHelp);
+    disable(q1);
+    reveal(q2);
     stack.push(q1);
   });
   $("#businessSizeL").click(function() {
     prev = q1;
-    disable(q1);
+    disable(q2);
     reveal(q3);
     stack.push(q1);
   });
