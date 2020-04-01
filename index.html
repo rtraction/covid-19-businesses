@@ -18,10 +18,10 @@
     content="If your business in located in Ontario, use this self-assessment to help determine which financial help measures apply to your business..." />
   <meta property="og:image" content="https://covid-19.ontario.ca/static/social_image_en.png" />
   <meta property="og:locale" content="en_CA" />
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-  <link href="../static/fonts.css" rel="stylesheet" />
-  <link href="../static/theme.css" rel="stylesheet" />
-  <link href="../static/style.css" rel="stylesheet" />
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon" />
+  <link href="src/static/fonts.css" rel="stylesheet" />
+  <link href="src/static/theme.css" rel="stylesheet" />
+  <link href="src/static/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -31,12 +31,12 @@
       <div class="ontario-row">
         <div class="ontario-small-5 ontario-columns">
           <a href="https://www.rtraction.com/" class="ontario-main-header__logo-link"><img class="ontario-header-logo"
-              src="../static/rTraction_logo_white.png" alt="rTraction homepage" /></a>
+              src="src/static/rTraction_logo_white.png" alt="rTraction homepage" /></a>
         </div>
 <!-- Don't show language selector for now
         <div class="ontario-small-7 ontario-columns ontario-text-right ontario-main-header__link">
-          <a href="../autoevaluation" class="ontario-hide-for-small-only">français</a>
-          <a href="../autoevaluation" class="ontario-show-for-small-only">FR</a>
+          <a href="src/autoevaluation" class="ontario-hide-for-small-only">français</a>
+          <a href="src/autoevaluation" class="ontario-show-for-small-only">FR</a>
         </div>
 -->
       </div>
@@ -73,10 +73,10 @@
                 <div class="ontario-callout ontario-callout--warning ontario-margin--bottom-double">
                   <div class="ontario-row ontario-row--collapse">
                     <div class="ontario-small-12 ontario-columns">
-                      <i class="ontario-icon ontario-icon__info" aria-hidden="true"></i> <span
-                        class="ontario-callout__header">Latest Update:</span>
+                      <i class="ontario-icon ontario-icon__info" aria-hidden="true"></i>
+                        <span class="ontario-callout__header">Latest Update:</span>
                         <span class="ontario-callout__lead">
-                          01 April 2020, 13:59 pm
+                          01 April 2020, 3:11 p.m.
                         </span>
                     </div>
                   </div>
@@ -120,6 +120,19 @@
               <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Back
             </a>
             <div class="ontario-question-content__wrapper">
+              <h2>Is your business not-for profit?</h2>
+            </div>
+            <div class="ontario-component__wrapper ontario-text-center">
+              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="NFPyes">Yes</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q2" id="NFPno">No</a>
+            </div>
+          </div>
+
+          <div id="q2">
+            <h1>COVID-19 business self-assessment</h1>
+            <a class="ontario-button--back backBtn" tabindex="0">
+              <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
+            <div class="ontario-question-content__wrapper">
               <h2>What size category is your business?</h2>
               <ul>
                 <li>1-99 employees - small or micro business</li>
@@ -129,26 +142,37 @@
             </div>
             <div class="ontario-component__wrapper ontario-text-center">
               <a class="ontario-button--primary ontario-button--survey" href="#q2" id="businessSizeS">Small Business</a>
-              <a class="ontario-button--primary ontario-button--survey" href="#q2" id="businessSizeL">Medium Business</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="businessSizeM">Medium Business</a>
               <a class="ontario-button--primary ontario-button--survey" href="#q3" id="businessSizeL">Large Business</a>
             </div>
           </div>
 
-          <div id="q2">
+          <div id="q3">
+            <h1>COVID-19 business self-assessment</h1>
+            <a class="ontario-button--back backBtn" tabindex="0">
+              <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
+              <div class="ontario-question-content__wrapper">
+                <h2>Does your company's total payroll is between $50,000 to $1 million in 2019</h2>
+              </div>
+            <div class="ontario-component__wrapper ontario-text-center">
+              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="payrollNo">No</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="payrollYes">Yes</a>
+            </div>
+          </div>
+
+          <div id="q4">
             <h1>COVID-19 business self-assessment</h1>
             <a class="ontario-button--back backBtn" tabindex="0">
               <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
             <div class="ontario-question-content__wrapper">
-              <h2>Does the following apply to your business?</h2>
-              <ul>
-                <li>Your business' revenue dropped by at least 30% due to the pandemic</li>
-              </ul>
+              <h2>Has your business' revenue dropped by at least 30% due to the pandemic</h2>
             </div>
             <div class="ontario-component__wrapper ontario-text-center">
-              <a class="ontario-button--primary ontario-button--survey" href="#wagesubsidiesInfo" id="revenuedropNo">No</a>
-              <a class="ontario-button--primary ontario-button--survey" href="#wagesubsidiesInfo" id="revenuedropYes">Yes</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#generalResult" id="revenuedropNo">No</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#generalResult" id="revenuedropYes">Yes</a>
             </div>
           </div>
+
 <!--
           <div id="q2">
             <h1>COVID-19 business self-assessment</h1>
@@ -168,7 +192,7 @@
               <a class="ontario-button--primary ontario-button--survey" href="#q4" id="emergencyCheckTwoYes">Yes</a>
             </div>
           </div>
--->
+
           <div id="q3">
             <h1>COVID-19 business self-assessment</h1>
             <a class="ontario-button--back backBtn" tabindex="0">
@@ -191,7 +215,7 @@
             </div>
           </div>
 
-          <div id="q4">
+          <div id="q5">
             <h1>COVID-19 business self-assessment</h1>
             <a class="ontario-button--back backBtn" tabindex="0">
               <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
@@ -237,23 +261,38 @@
                 id="closeContactWithSickYes">Yes</a>
             </div>
           </div>
-
+-->
           <!--   RESULT SECTIONS  -->
-          <div id="wagesubsidiesInfo" class="recs">
+          <div id="generalResult" class="recs">
             <h1>COVID-19 business self-assessment</h1>
             <div class="ontario-component__wrapper ontario-text-left">
               <a class="ontario-button--back resetBtn" tabindex="0"><i class="ontario-icon ontario-icon__back-blue"
                   aria-hidden="true"></i> Take the assessment again</a>
             </div>
             <div class="ontario-row">
-              <div class="ontario-small-12 ontario-columns">
-                <div class="ontario-callout ontario-callout--alert">
-                  <h2 class="ontario-callout__header">Self-assessment result</h2>
-                  <span class="ontario-callout__lead">
-                    A wage subsidy of up to 75% may apply to you, for up to 3 months, retroactive to March 15, 2020.
-                    Please visit the department of finance's <a href="https://www.canada.ca/en/department-finance/economic-response-plan/covid19-businesses.html">website</a> for up-to-date information.
-                  </span>
+              <div class="ontario-small-12 ontario-large-8 ontario-columns">
+                <div class="ontario-callout ontario-callout--warning ontario-margin--bottom-double">
+                  <div class="ontario-row ontario-row--collapse">
+                    <div class="ontario-small-12 ontario-columns">
+                      <i class="ontario-icon ontario-icon__info" aria-hidden="true"></i>
+                        <span class="ontario-callout__header">Self-assessment results</span>
+                        <span class="ontario-callout__lead">
+                          The following apply to your business
+                        </span>
+                    </div>
+                  </div>
                 </div>
+                <p class="ontario-margin--top-half">
+                  <h3>Work-sharing</h3>
+                    <ul>
+                      <li>Extension of the maximum possible duration of an agreement from 38 weeks to 76 weeks.</li>
+                    </ul>
+                  <h3>Wage subsidies</h3>
+                    <ul>
+                      <li>A wage subsidy of up to 75% may apply to you, for up to 3 months, retroactive to March 15, 2020.
+                  Please visit the department of finance's <a href="https://www.canada.ca/en/department-finance/economic-response-plan/covid19-businesses.html">website</a> for up-to-date information.</li>
+                    </ul>
+                </p>
               </div>
               <div class="ontario-small-12 ontario-large-4 ontario-columns">
                 <aside class="ontario-callout">
@@ -272,10 +311,9 @@
             </div>
             <div class="ontario-row ontario-margin ontario-margin--top-double">
               <div class="ontario-small-12 ontario-columns">
-                <p><small>Adapted from and with thanks to Alberta Health Services and the Government of Ontario. </small></p>
+                <p><small>Adapted from and with thanks to Alberta Health Services and the Government of Ontario</small></p>
               </div>
             </div>
-          </div>
 
           <div id="noHelp" class="recs">
             <h1>COVID-19 business self-assessment</h1>
@@ -446,7 +484,7 @@
             </div>
           </div>
 
-          <div id="unlikelyCovid19" class="recs">
+          <div id="BCAP" class="recs">
             <h1>COVID-19 business self-assessment</h1>
             <div class="ontario-component__wrapper ontario-text-left">
               <a class="ontario-button--back resetBtn" tabindex="0"><i class="ontario-icon ontario-icon__back-blue"
@@ -463,49 +501,9 @@
                 </div>
                 <p class="ontario-strong-text">You should:</p>
                 <ul>
-                  <li>Only leave your home or see other people for essential reasons, and where possible seek services
-                    over the phone or online or ask for help from friends, family or neighbours.
-                    Learn more about <a
-                      href="https://www.publichealthontario.ca/-/media/documents/ncov/factsheet-covid-19-how-to-self-isolate.pdf?la=en"
-                      target="_blank" rel="noopener"><span class="ontario-show-for-sr">Opens in a new window
-                      </span>self-isolating</a>.</li>
-                  <li>
-                    Continue to monitor your health after your symptoms started. Learn more about <a
-                      href="https://www.publichealthontario.ca/-/media/documents/ncov/factsheet-covid-19-self-monitor.pdf?la=en"
-                      target="_blank" rel="noopener">
-                      <span class="ontario-show-for-sr">Opens in a new window </span>self-monitoring.</a>
-                  </li>
-                  <li>
-                    Not call your primary care provider or Telehealth Ontario unless your symptoms worsen or you develop
-                    new symptoms.
-                  </li>
+                  <li>Action 1</li>
+                  <li>Action 2</li>
                 </ul>
-                <div class="ontario-callout ontario-callout--warning">
-                  <div class="ontario-row ontario-row--collapse">
-                    <div class="ontario-small-12 ontario-columns">
-                      <i class="ontario-icon ontario-icon__info" aria-hidden="true"></i> <span
-                        class="ontario-callout--warning-title">Call volumes</span>
-                    </div>
-                  </div>
-                  <div class="ontario-row ontario-row--collapse">
-                    <div class="ontario-small-12 ontario-columns">
-                      <div class="ontario-margin--top-half">Telehealth Ontario is experiencing heavy call volumes and
-                        will get to your call as quickly as they can.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ontario-small-12 ontario-large-4 ontario-columns">
-                <aside class="ontario-callout">
-                  <h3>Additional info and resources</h3>
-                  <p>To protect yourself while out in public, wash your hands frequently,
-                    and maintain a distance of about 2 metres from others.
-                  </p>
-                  <ul class="ontario-callout__list">
-                    <li><a href="https://www.ontario.ca/page/2019-novel-coronavirus">General information about COVID-19
-                        in Ontario</a></li>
-                  </ul>
-                </aside>
               </div>
             </div>
             <div class="ontario-row ontario-margin ontario-margin--top-double">
@@ -615,8 +613,8 @@
     </div>
   </footer>
 
-  <script src="../static/jquery.min.js"></script>
-  <script src="../static/assessment.js"></script>
+  <script src="src/static/jquery.min.js"></script>
+  <script src="src/static/assessment.js"></script>
 </body>
 
 </html>

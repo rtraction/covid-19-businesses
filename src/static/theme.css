@@ -1585,7 +1585,7 @@ h6 {
   margin-bottom: 1rem;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
 }
 h1 {
   font-size: 2rem;
@@ -1678,6 +1678,13 @@ h6 {
 }
 @font-face {
   font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: local("Open Sans"), local("Open-Sans-regular"), url("fonts/open-sans-400/open-sans-400.woff2") format("woff2"),
+    url("fonts/open-sans-400/open-sans-400.woff") format("woff"), url("fonts/open-sans-400/open-sans-400.svg#OpenSans") format("svg");
+}
+@font-face {
+  font-family: "Open Sans";
   font-weight: 600;
   font-style: normal;
   src: local("Open Sans Semibold"), local("Open-Sans-600"), url("fonts/open-sans-600/open-sans-600.woff2") format("woff2"),
@@ -1713,7 +1720,7 @@ h6 {
     url("/fonts/raleway-modified-700/raleway-modified-700.svg") format("svg"), local("Raleway Bold"), local("Raleway-700");
 }
 html {
-  font-family: Work Sans;
+  font-family: "Work Sans";
   font-size: 1rem;
   color: #1a1a1a;
 }
@@ -1981,7 +1988,7 @@ strong {
   display: inline-block;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   padding: 0px 12px;
   text-align: center;
@@ -2017,7 +2024,7 @@ strong {
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 600;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: calc(14 / 9);
   margin: 0 calc(1rem + 0.75rem) 1.5rem 0;
   min-width: 10rem;
@@ -2229,7 +2236,7 @@ strong {
 
 .ontario-fieldset__legend {
   color: #1a1a1a;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1875rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
@@ -2262,7 +2269,7 @@ strong {
 }
 .ontario-fieldset__legend-required-flag,
 .ontario-fieldset__legend-optional-flag {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -2277,7 +2284,7 @@ strong {
 .ontario-label {
   cursor: pointer;
   color: #1a1a1a;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1875rem;
   font-weight: 700;
   line-height: 1.5;
@@ -2312,7 +2319,7 @@ strong {
   }
 }
 .ontario-label__flag {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -2429,7 +2436,7 @@ strong {
   color: #1a1a1a;
   display: block;
   font-size: 1rem;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   margin: 0 0 2.5rem;
   max-width: 46em;
@@ -2483,7 +2490,7 @@ strong {
   margin-bottom: 1rem;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .Prose h1,
 .Document-title,
@@ -2599,7 +2606,7 @@ strong {
   margin-bottom: 1rem;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .Prose h1,
 .Document-title,
@@ -2722,7 +2729,7 @@ textarea {
 }
 input[type="checkbox"] + label,
 input[type="radio"] + label {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   margin-left: 0;
@@ -2901,7 +2908,7 @@ select {
   line-height: 1.5;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
-  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .Pen-header {
   margin: 2rem 0 1rem 0;
@@ -2958,7 +2965,7 @@ html.has-js {
 .Prose {
   max-width: 72em;
   font: inherit;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
 }
@@ -3192,7 +3199,7 @@ textarea {
 }
 input[type="checkbox"] + label,
 input[type="radio"] + label {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   margin-left: 0;

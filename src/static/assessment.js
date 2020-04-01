@@ -19,7 +19,7 @@ $(document).ready(function() {
     q6 = $("#q6");
 
   // RESULT PAGES
-  var wagesubsidiesInfo = $("#wagesubsidiesInfo"),
+  var generalResult = $("#generalResult"),
     noHelp = $("#noHelp"),
     callNurse = $("#callNurse"),
     selfIsolate = $("#selfIsolate"),
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, wagesubsidiesInfo, noHelp];
+  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, generalResult, noHelp];
 
   var footer = $("footer");
 
@@ -118,7 +118,7 @@ $(document).ready(function() {
 
   // ANSWERS
   var stack = [],
-    mildSymptoms = true;
+    bcap = true;
 
   // QUESTION YES/NO BUTTON ACTIONS
 
@@ -130,40 +130,73 @@ $(document).ready(function() {
     stack.push(q0);
   });
 
-  // q1 btns
-  $("#businessSizeS").click(function() {
+  //q1 buttons
+  $("#NFPno").click(function() {
     prev = q1;
     disable(q1);
     reveal(q2);
     stack.push(q1);
   });
-  $("#businessSizeM").click(function() {
+  $("#NFPyes").click(function() {
     prev = q1;
     disable(q1);
-    reveal(q2);
-    stack.push(q1);
-  });
-  $("#businessSizeL").click(function() {
-    prev = q1;
-    disable(q2);
     reveal(q3);
     stack.push(q1);
   });
 
   // q2 btns
-  $("#revenuedropNo").click(function() {
+  $("#businessSizeS").click(function() {
     prev = q2;
     disable(q2);
     reveal(q3);
     stack.push(q2);
   });
-  $("#revenuedropYes").click(function() {
+  $("#businessSizeM").click(function() {
     prev = q2;
     disable(q2);
-    reveal(q3);
+    reveal(q4);
+    stack.push(q2);
+  });
+  $("#businessSizeL").click(function() {
+    prev = q2;
+    disable(q2);
+    reveal(q4);
     stack.push(q2);
   });
 
+  // q3 btns
+  $("#payrollNo").click(function() {
+    bcap = false;
+    prev = q3;
+    disable(q3);
+    reveal(q4);
+    stack.push(q3);
+  });
+  $("#payrollYes").click(function() {
+    bcap = true;
+    prev = q3;
+    disable(q3);
+    reveal(q4);
+    stack.push(q3);
+  });
+
+  // q4 btns
+  $("#revenuedropNo").click(function() {
+    revenueDrop = false;
+    prev = q4;
+    disable(q4);
+    reveal(generalResult);
+    stack.push(q4);
+  });
+  $("#revenuedropYes").click(function() {
+    revenueDrop = true;
+    prev = q4;
+    disable(q4);
+    reveal(generalResult);
+    stack.push(q4);
+  });
+
+/* Example of variable set
   $("#emergencyCheckTwoYes").click(function() {
     mildSymptoms = false;
     prev = q1;
@@ -177,20 +210,6 @@ $(document).ready(function() {
     disable(q2);
     reveal(q3);
     stack.push(q2);
-  });
-
-  // q3 btns
-  $("#testingRequiredYes").click(function() {
-    prev = q3;
-    disable(q3);
-    reveal(q4);
-    stack.push(q3);
-  });
-  $("#testingRequiredNo").click(function() {
-    prev = q3;
-    disable(q3);
-    reveal(unlikelySick);
-    stack.push(q3);
   });
 
   // q4 btns
@@ -220,7 +239,7 @@ $(document).ready(function() {
     reveal(q6);
     stack.push(q5);
   });
-
+*/
   // q6 btns
   $("#closeContactWithSickYes").click(function() {
     prev = q6;
