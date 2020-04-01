@@ -177,14 +177,12 @@ $(document).ready(function() {
 
   // q4 btns
   $("#revenuedropNo").click(function() {
-    revenueDrop = false;
     prev = q4;
     disable(q4);
     reveal(generalResult);
     stack.push(q4);
   });
   $("#revenuedropYes").click(function(event) {
-    revenueDrop = true;
     prev = q4;
     disable(q4);
     reveal(bcap ? nfpResult : wageSubsidies);
