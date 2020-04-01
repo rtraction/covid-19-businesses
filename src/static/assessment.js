@@ -14,9 +14,7 @@ $(document).ready(function() {
     q1 = $("#q1"),
     q2 = $("#q2"),
     q3 = $("#q3"),
-    q4 = $("#q4"),
-    q5 = $("#q5"),
-    q6 = $("#q6");
+    q4 = $("#q4");
 
   // RESULT PAGES
   var generalResult = $("#generalResult"),
@@ -24,7 +22,7 @@ $(document).ready(function() {
     nfpResult = $("#nfpResult");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
-  var qArray = [q0, q1, q2, q3, q4, q5, q6];
+  var qArray = [q0, q1, q2, q3, q4];
   var rArray = [nfpResult, generalResult, wageSubsidies];
 
   var footer = $("footer");
