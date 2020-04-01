@@ -20,15 +20,15 @@ $(document).ready(function() {
 
   // RESULT PAGES
   var generalResult = $("#generalResult"),
-    noHelp = $("#noHelp"),
-    callNurse = $("#callNurse"),
+    wageSubsidies = $("#wageSubsidies"),
+    nfpResult = $("#nfpResult"),
     selfIsolate = $("#selfIsolate"),
     unlikelyCovid19 = $("#unlikelyCovid19"),
     unlikelySick = $("#unlikelySick");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, generalResult, noHelp];
+  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, nfpResult, generalResult, wageSubsidies];
 
   var footer = $("footer");
 
@@ -188,11 +188,12 @@ $(document).ready(function() {
     reveal(generalResult);
     stack.push(q4);
   });
-  $("#revenuedropYes").click(function() {
+  $("#revenuedropYes").click(function(event) {
     revenueDrop = true;
     prev = q4;
     disable(q4);
-    reveal(generalResult);
+    reveal(bcap ? generalResult : nfpResult);
+    window.location.replace(bcap ? "#generalResult" : "#nfpResult");
     stack.push(q4);
   });
 
@@ -239,7 +240,6 @@ $(document).ready(function() {
     reveal(q6);
     stack.push(q5);
   });
-*/
   // q6 btns
   $("#closeContactWithSickYes").click(function() {
     prev = q6;
@@ -251,8 +251,9 @@ $(document).ready(function() {
     event.preventDefault();
     prev = q6;
     disable(q6);
-    reveal(mildSymptoms ? unlikelyCovid19 : selfIsolate);
-    window.location.replace(mildSymptoms ? "#unlikelyCovid19" : "#selfIsolate");
+    reveal(bcap ? unlikelyCovid19 : selfIsolate);
+    window.location.replace(bcap ? "#nfpResult" : "#generalResult");
     stack.push(q6);
   });
+*/
 });
