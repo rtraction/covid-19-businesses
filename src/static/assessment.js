@@ -131,20 +131,39 @@ $(document).ready(function() {
   });
 
   // q1 btns
-  $("#revenuedropNo").click(function() {
+  $("#businessSizeS").click(function() {
     prev = q1;
     disable(q1);
+    reveal(q2);
+    stack.push(q1);
+  });
+  $("#businessSizeM").click(function() {
+    prev = q1;
+    disable(q2);
     reveal(noHelp);
     stack.push(q1);
   });
-  $("#revenuedropYes").click(function() {
+  $("#businessSizeL").click(function() {
     prev = q1;
     disable(q1);
-    reveal(wagesubsidiesInfo);
+    reveal(q3);
     stack.push(q1);
   });
 
   // q2 btns
+  $("#revenuedropNo").click(function() {
+    prev = q2;
+    disable(q2);
+    reveal(q3);
+    stack.push(q2);
+  });
+  $("#revenuedropYes").click(function() {
+    prev = q2;
+    disable(q2);
+    reveal(q3);
+    stack.push(q2);
+  });
+
   $("#emergencyCheckTwoYes").click(function() {
     mildSymptoms = false;
     prev = q1;
