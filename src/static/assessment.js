@@ -21,14 +21,11 @@ $(document).ready(function() {
   // RESULT PAGES
   var generalResult = $("#generalResult"),
     wageSubsidies = $("#wageSubsidies"),
-    nfpResult = $("#nfpResult"),
-    selfIsolate = $("#selfIsolate"),
-    unlikelyCovid19 = $("#unlikelyCovid19"),
-    unlikelySick = $("#unlikelySick");
+    nfpResult = $("#nfpResult");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, nfpResult, generalResult, wageSubsidies];
+  var rArray = [nfpResult, generalResult, wageSubsidies];
 
   var footer = $("footer");
 
@@ -185,15 +182,15 @@ $(document).ready(function() {
     revenueDrop = false;
     prev = q4;
     disable(q4);
-    reveal(generalResult);
+    reveal(q4);
     stack.push(q4);
   });
   $("#revenuedropYes").click(function(event) {
     revenueDrop = true;
     prev = q4;
     disable(q4);
-    reveal(bcap ? generalResult : nfpResult);
-    window.location.replace(bcap ? "#generalResult" : "#nfpResult");
+    reveal(bcap ? nfpResult : generalResult);
+    window.location.replace(bcap ? "#nfpResult" : "#generalResult");
     stack.push(q4);
   });
 
