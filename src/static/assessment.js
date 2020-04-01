@@ -182,15 +182,15 @@ $(document).ready(function() {
     revenueDrop = false;
     prev = q4;
     disable(q4);
-    reveal(q4);
+    reveal(generalResult);
     stack.push(q4);
   });
   $("#revenuedropYes").click(function(event) {
     revenueDrop = true;
     prev = q4;
     disable(q4);
-    reveal(bcap ? nfpResult : generalResult);
-    window.location.replace(bcap ? "#nfpResult" : "#generalResult");
+    reveal(bcap ? nfpResult : wageSubsidies);
+    window.location.replace(bcap ? "#nfpResult" : "#wageSubsidies");
     stack.push(q4);
   });
 
