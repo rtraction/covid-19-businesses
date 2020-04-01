@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4];
-  var rArray = [nfpResult, generalResult, wageSubsidies];
+  var rArray = [generalResult, wageSubsidies, nfpResult];
 
   var footer = $("footer");
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
 
   // ANSWERS
   var stack = [],
-    bcap = true;
+    payroll = true;
 
   // QUESTION YES/NO BUTTON ACTIONS
 
@@ -161,14 +161,14 @@ $(document).ready(function() {
 
   // q3 btns
   $("#payrollNo").click(function() {
-    bcap = false;
+    payroll = false;
     prev = q3;
     disable(q3);
     reveal(q4);
     stack.push(q3);
   });
   $("#payrollYes").click(function() {
-    bcap = true;
+    payroll = true;
     prev = q3;
     disable(q3);
     reveal(q4);
@@ -185,8 +185,8 @@ $(document).ready(function() {
   $("#revenuedropYes").click(function(event) {
     prev = q4;
     disable(q4);
-    reveal(bcap ? nfpResult : wageSubsidies);
-    window.location.replace(bcap ? "#nfpResult" : "#wageSubsidies");
+    reveal(payroll ? nfpResult : wageSubsidies);
+    window.location.replace(payroll ? "#nfpResult" : "#wageSubsidies");
     stack.push(q4);
   });
 
