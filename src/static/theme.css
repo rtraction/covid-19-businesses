@@ -1713,7 +1713,7 @@ h6 {
     url("/fonts/raleway-modified-700/raleway-modified-700.svg") format("svg"), local("Raleway Bold"), local("Raleway-700");
 }
 html {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Work Sans;
   font-size: 1rem;
   color: #1a1a1a;
 }
