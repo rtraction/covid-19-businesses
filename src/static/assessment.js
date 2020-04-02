@@ -20,12 +20,18 @@ $(document).ready(function() {
 
   // RESULT PAGES
   var generalResult = $("#generalResult"),
-    wageSubsidies = $("#wageSubsidies"),
-    nfpResult = $("#nfpResult");
+    cews = $("#cews"),
+    fcc = $("#fcc"),
+    workSharing = $("#workSharing"),
+    impp = $("#impp"),
+    loan = $("#loan"),
+    loanguarantee = $("#loanguarantee"),
+    taxAll = $("#taxAll"),
+    hydro = $("#hydro");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [nfpResult, wageSubsidies, generalResult];
+  var rArray = [generalResult, cews, fcc, impp, loan, loanguarantee, workSharing, hydro, taxAll];
 
   var footer = $("footer");
 
@@ -113,7 +119,12 @@ $(document).ready(function() {
     goBack("#q0");
   }
 
-  // ANSWERS
+  /*
+  ANSWERS - the variables are set when the according buttons are clicked.
+  The set variables then reveal the according result sections if "true".
+  This is done in the last question - see if clauses at bottom of script.
+  */
+
   var stack = [],
     payroll = true,
     is_small = true,
@@ -222,24 +233,61 @@ $(document).ready(function() {
 
   // q6 btns
   $("#revenuedropNo").click(function() {
-    event.preventDefault();
     prev = q6;
     disable(q6);
-    if (payroll == true) {
-      reveal(nfpResult);
-      window.location.replace("#nfpResult");
-    } else {
-      reveal(generalResult);
-      window.location.replace("#generalResult");
+    reveal(generalResult)
+    reveal(workSharing)
+    reveal(taxAll)
+    //IF section to enable or disable result sections
+    if ((is_small || is_nfp) && (payroll)) {
+      reveal(loan);
+    }
+    if (is_small || is_medium) {
+      reveal(loanguarantee);
+    }
+    if (is_small) {
+      reveal(hydro);
+    }
+    if (is_agro) {
+      reveal(fcc);
+    }
+    if (is_bank) {
+      reveal(impp);
     }
     stack.push(q6);
   });
-  $("#revenuedropYes").click(function(event) {
-    event.preventDefault();
+  $("#revenuedropYes").click(function() {
     prev = q6;
     disable(q6);
-    reveal(payroll ? nfpResult : wageSubsidies);
-    window.location.replace(payroll ? "#nfpResult" : "#wageSubsidies");
+    reveal(cews);
+    reveal(workSharing)
+    reveal(taxAll)
+    //IF section to enable or disable result sections
+    if ((is_small || is_nfp) && (payroll)) {
+      reveal(loan);
+    }
+    if (is_small || is_medium) {
+      reveal(loanguarantee);
+    }
+    if (is_small) {
+      reveal(hydro);
+    }
+    if (is_agro) {
+      reveal(fcc);
+    }
+    if (is_bank) {
+      reveal(impp);
+    }
     stack.push(q6);
   });
 });
+
+/*
+if (payroll == true) {
+  reveal(nfpResult);
+  window.location.replace("#nfpResult");
+} else {
+  reveal(generalResult);
+  window.location.replace("#generalResult");
+}
+*/
