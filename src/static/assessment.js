@@ -15,8 +15,8 @@ $(document).ready(function() {
     q2 = $("#q2"),
     q3 = $("#q3"),
     q4 = $("#q4"),
-    q3 = $("#q5"),
-    q3 = $("#q6");
+    q5 = $("#q5"),
+    q6 = $("#q6");
 
   // RESULT PAGES
   var generalResult = $("#generalResult"),
@@ -189,15 +189,15 @@ $(document).ready(function() {
   });
 
   // q4 btns
-  $("#agroYes").click(function() {
-    is_agro = true;
+  $("#bankYes").click(function() {
+    is_bank = true;
     prev = q4;
     disable(q4);
     reveal(q5);
     stack.push(q4);
   });
-  $("#agroNo").click(function() {
-    is_agro = false;
+  $("#bankNo").click(function() {
+    is_bank = false;
     prev = q4;
     disable(q4);
     reveal(q5);
@@ -205,15 +205,15 @@ $(document).ready(function() {
   });
 
   // q5 btns
-  $("#bankYes").click(function() {
-    is_bank = true;
+  $("#agroYes").click(function() {
+    is_agro = true;
     prev = q5;
     disable(q5);
     reveal(q6);
     stack.push(q5);
   });
-  $("#bankNo").click(function() {
-    is_bank = false;
+  $("#agroNo").click(function() {
+    is_agro = false;
     prev = q5;
     disable(q5);
     reveal(q6);
@@ -242,64 +242,4 @@ $(document).ready(function() {
     window.location.replace(payroll ? "#nfpResult" : "#wageSubsidies");
     stack.push(q6);
   });
-
-/* Example of variable set
-  $("#emergencyCheckTwoYes").click(function() {
-    mildSymptoms = false;
-    prev = q1;
-    disable(q2);
-    reveal(q4);
-    stack.push(q2);
-  });
-  $("#emergencyCheckTwoNo").click(function() {
-    mildSymptoms = true;
-    prev = q2;
-    disable(q2);
-    reveal(q3);
-    stack.push(q2);
-  });
-
-  // q4 btns
-  $("#exposedYes").click(function() {
-    prev = q4;
-    disable(q4);
-    reveal(callNurse);
-    stack.push(q4);
-  });
-  $("#exposedNo").click(function() {
-    prev = q4;
-    disable(q4);
-    reveal(q5);
-    stack.push(q4);
-  });
-
-  // q5 btns
-  $("#closeContactYes").click(function() {
-    prev = q5;
-    disable(q5);
-    reveal(callNurse);
-    stack.push(q5);
-  });
-  $("#closeContactNo").click(function() {
-    prev = q5;
-    disable(q5);
-    reveal(q6);
-    stack.push(q5);
-  });
-  // q6 btns
-  $("#closeContactWithSickYes").click(function() {
-    prev = q6;
-    disable(q6);
-    reveal(callNurse);
-    stack.push(q6);
-  });
-  $("#closeContactWithSickNo").click(function(event) {
-    event.preventDefault();
-    prev = q6;
-    disable(q6);
-    reveal(mildSymptoms ? unlikelyCovid19 : selfIsolate);
-    window.location.replace(mildSymptoms ? "#unlikelyCovid19" : "#selfIsolate");
-    stack.push(q6);
-  });
-*/
 });
