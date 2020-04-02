@@ -14,7 +14,9 @@ $(document).ready(function() {
     q1 = $("#q1"),
     q2 = $("#q2"),
     q3 = $("#q3"),
-    q4 = $("#q4");
+    q4 = $("#q4"),
+    q3 = $("#q5"),
+    q3 = $("#q6");
 
   // RESULT PAGES
   var generalResult = $("#generalResult"),
@@ -22,7 +24,7 @@ $(document).ready(function() {
     nfpResult = $("#nfpResult");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
-  var qArray = [q0, q1, q2, q3, q4];
+  var qArray = [q0, q1, q2, q3, q4, q5, q6];
   var rArray = [nfpResult, wageSubsidies, generalResult];
 
   var footer = $("footer");
@@ -113,7 +115,12 @@ $(document).ready(function() {
 
   // ANSWERS
   var stack = [],
-    payroll = true;
+    payroll = true,
+    is_small = true,
+    is_medium = true,
+    is_agro = true,
+    is_bank = true,
+    is_nfp = true;
 
   // QUESTION YES/NO BUTTON ACTIONS
 
@@ -141,18 +148,24 @@ $(document).ready(function() {
 
   // q2 btns
   $("#businessSizeS").click(function() {
+    is_small = true;
+    is_medium = false;
     prev = q2;
     disable(q2);
     reveal(q3);
     stack.push(q2);
   });
   $("#businessSizeM").click(function() {
+    is_medium = true;
+    is_small = false;
     prev = q2;
     disable(q2);
     reveal(q4);
     stack.push(q2);
   });
   $("#businessSizeL").click(function() {
+    is_small = false;
+    is_medium = false;
     prev = q2;
     disable(q2);
     reveal(q4);
@@ -176,19 +189,58 @@ $(document).ready(function() {
   });
 
   // q4 btns
-  $("#revenuedropNo").click(function() {
+  $("#agroYes").click(function() {
+    is_agro = true;
     prev = q4;
     disable(q4);
-    reveal(payroll ? nfpResult : wageSubsidies);
-    window.location.replace(payroll ? "#nfpResult" : "#wageSubsidies");
+    reveal(q5);
     stack.push(q4);
   });
-  $("#revenuedropYes").click(function(event) {
+  $("#agroNo").click(function() {
+    is_agro = false;
     prev = q4;
     disable(q4);
+    reveal(q5);
+    stack.push(q4);
+  });
+
+  // q5 btns
+  $("#bankYes").click(function() {
+    is_bank = true;
+    prev = q5;
+    disable(q5);
+    reveal(q6);
+    stack.push(q5);
+  });
+  $("#bankNo").click(function() {
+    is_bank = false;
+    prev = q5;
+    disable(q5);
+    reveal(q6);
+    stack.push(q5);
+  });
+
+  // q6 btns
+  $("#revenuedropNo").click(function() {
+    event.preventDefault();
+    prev = q6;
+    disable(q6);
+    if (payroll == true) {
+      reveal(nfpResult);
+      window.location.replace("#nfpResult");
+    } else {
+      reveal(generalResult);
+      window.location.replace("#generalResult");
+    }
+    stack.push(q6);
+  });
+  $("#revenuedropYes").click(function(event) {
+    event.preventDefault();
+    prev = q6;
+    disable(q6);
     reveal(payroll ? nfpResult : wageSubsidies);
     window.location.replace(payroll ? "#nfpResult" : "#wageSubsidies");
-    stack.push(q4);
+    stack.push(q6);
   });
 
 /* Example of variable set
@@ -245,8 +297,8 @@ $(document).ready(function() {
     event.preventDefault();
     prev = q6;
     disable(q6);
-    reveal(bcap ? unlikelyCovid19 : selfIsolate);
-    window.location.replace(bcap ? "#nfpResult" : "#generalResult");
+    reveal(mildSymptoms ? unlikelyCovid19 : selfIsolate);
+    window.location.replace(mildSymptoms ? "#unlikelyCovid19" : "#selfIsolate");
     stack.push(q6);
   });
 */

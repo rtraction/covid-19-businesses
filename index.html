@@ -25,7 +25,9 @@
 </head>
 
 <body>
-  <div class="ontario-text-center"><a href="#main-content" class="ontario-show-on-focus">Skip to main content</a></div>
+  <div class="ontario-text-center"><a href="#main-content" class="ontario-show-on-focus">Skip to main content</a>
+  </div>
+
   <header class="ontario-main-header">
     <div class="ontario-grid-container">
       <div class="ontario-row">
@@ -33,30 +35,18 @@
           <a href="https://www.rtraction.com/" class="ontario-main-header__logo-link"><img class="ontario-header-logo"
               src="src/static/rTraction_logo_white.png" alt="rTraction homepage" /></a>
         </div>
-<!-- Don't show language selector for now
-        <div class="ontario-small-7 ontario-columns ontario-text-right ontario-main-header__link">
-          <a href="src/autoevaluation" class="ontario-hide-for-small-only">français</a>
-          <a href="src/autoevaluation" class="ontario-show-for-small-only">FR</a>
-        </div>
--->
       </div>
     </div>
   </header>
+
   <main id="main-content">
     <div class="ontario-grid-container">
-<!-- Don't show links here for now
       <div class="ontario-row">
         <div class="ontario-small-12 ontario-columns">
-          <ul class="ontario-breadcrumbs">
-            <li><a href="https://www.ontario.ca/page/health-care-ontario">Health and wellness</a></li>
-            <li><a href="https://www.ontario.ca/page/2019-novel-coronavirus">The Novel 2019 Coronavirus (COVID-19)</a>
-            </li>
-          </ul>
-        </div>
-      </div>
--->
-      <div class="ontario-row">
-        <div class="ontario-small-12 ontario-columns">
+
+
+          <!-- QUESTION PAGES -->
+
           <div id="q0">
             <div class="ontario-row">
               <div class="ontario-small-12 ontario-columns">
@@ -81,7 +71,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="ontario-text-center">
                   <a class="ontario-button--primary ontario-button--survey" href="#q1" id="launchSelfAssessment">
                     Start self-assessment
@@ -111,7 +100,6 @@
                 <p><small>Adapted from and with thanks to Alberta Health Services and the Government of Ontario</small></p>
               </div>
             </div>
-
           </div>
 
           <div id="q1">
@@ -141,9 +129,9 @@
               </ul>
             </div>
             <div class="ontario-component__wrapper ontario-text-center">
-              <a class="ontario-button--primary ontario-button--survey" href="#q2" id="businessSizeS">Small Business</a>
-              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="businessSizeM">Medium Business</a>
-              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="businessSizeL">Large Business</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="businessSizeS">Small Business</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q4" id="businessSizeM">Medium Business</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q4" id="businessSizeL">Large Business</a>
             </div>
           </div>
 
@@ -152,15 +140,46 @@
             <a class="ontario-button--back backBtn" tabindex="0">
               <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
               <div class="ontario-question-content__wrapper">
-                <h2>Does your company's total payroll is between $50,000 to $1 million in 2019</h2>
+                <h2>Is your company's 2019 total payroll between $50,000 to $1 million?</h2>
               </div>
             <div class="ontario-component__wrapper ontario-text-center">
-              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="payrollNo">No</a>
-              <a class="ontario-button--primary ontario-button--survey" href="#q3" id="payrollYes">Yes</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q4" id="payrollNo">No</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q4" id="payrollYes">Yes</a>
             </div>
           </div>
 
           <div id="q4">
+            <h1>COVID-19 business self-assessment</h1>
+            <a class="ontario-button--back backBtn" tabindex="0">
+              <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
+            <div class="ontario-question-content__wrapper">
+              <h2>Does your business own/lend mortgages?</h2>
+            </div>
+            <div class="ontario-component__wrapper ontario-text-center">
+              <a class="ontario-button--primary ontario-button--survey" href="#q5" id="bankNo">No</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q5" id="bankYes">Yes</a>
+            </div>
+          </div>
+
+          <div id="q5">
+            <h1>COVID-19 business self-assessment</h1>
+            <a class="ontario-button--back backBtn" tabindex="0">
+              <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
+            <div class="ontario-question-content__wrapper">
+              <h2>Does your business belong to one of the following:</h2>
+              <ul>
+                <li>Farming</li>
+                <li>Agribusiness</li>
+                <li>Food production and processing</li>
+              </ul>
+            </div>
+            <div class="ontario-component__wrapper ontario-text-center">
+              <a class="ontario-button--primary ontario-button--survey" href="#q6" id="agroNo">No</a>
+              <a class="ontario-button--primary ontario-button--survey" href="#q6" id="agroYes">Yes</a>
+            </div>
+          </div>
+
+          <div id="q6">
             <h1>COVID-19 business self-assessment</h1>
             <a class="ontario-button--back backBtn" tabindex="0">
               <i class="ontario-icon ontario-icon__back-blue" aria-hidden="true"></i> Return to previous question</a>
@@ -173,7 +192,8 @@
             </div>
           </div>
 
-          <!--   RESULT SECTIONS  -->
+          <!-- RESULT PAGES -->
+
           <div id="generalResult" class="recs">
             <h1>COVID-19 business self-assessment</h1>
             <div class="ontario-component__wrapper ontario-text-left">
@@ -365,23 +385,13 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div class="ontario-grid-container">
-<!-- Don't show links for now
-      <div class="ontario-row ontario-row--collapse">
-        <div class="ontario-small-12 ontario-columns">
-          <ul class="ontario-footer__list">
-            <li><a href="https://www.ontario.ca/page/about-ontario">about Ontario</a></li>
-            <li><a href="https://www.ontario.ca/page/accessibility">accessibility</a></li>
-            <li><a href="http://news.ontario.ca/newsroom/en">news</a></li>
-            <li><a href="https://www.ontario.ca/page/privacy-statement">privacy</a></li>
-            <li><a href="https://www.ontario.ca/page/terms-use">terms of use</a></li>
-          </ul>
-        </div>
-      </div>
--->
       <div class="ontario-row ontario-row--collapse">
         <div class="ontario-small-12 ontario-columns">
           <p class="ontario-footer__copyright">
