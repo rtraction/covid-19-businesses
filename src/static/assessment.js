@@ -16,9 +16,10 @@ $(document).ready(function() {
     q3 = $("#q3"),
     q4 = $("#q4"),
     q5 = $("#q5"),
-    q6 = $("#q6");
+    q6 = $("#q6"),
+    q7 = $("#q7");
 
-  // RESULT PAGES
+  // RESULT "PAGES"
   var generalResult = $("#generalResult"),
     cews = $("#cews"),
     fcc = $("#fcc"),
@@ -30,7 +31,7 @@ $(document).ready(function() {
     hydro = $("#hydro");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
-  var qArray = [q0, q1, q2, q3, q4, q5, q6];
+  var qArray = [q0, q1, q2, q3, q4, q5, q6, q7];
   var rArray = [generalResult, cews, fcc, impp, loan, loanguarantee, workSharing, hydro, taxAll];
 
   var footer = $("footer");
@@ -81,6 +82,9 @@ $(document).ready(function() {
   function init() {
     // reveal the first question/buttons
     window.history.pushState(null, document.title, "#q0");
+    for (var i = 1; i < qArray.length; i++) {
+      disable(qArray[i]);
+    }
     reveal(q0);
   }
 
@@ -143,40 +147,27 @@ $(document).ready(function() {
     stack.push(q0);
   });
 
-  //q1 buttons
-  $("#NFPno").click(function() {
+  //Disclaimer q1 buttons
+  $("#accept").click(function() {
     prev = q1;
     disable(q1);
     reveal(q2);
     stack.push(q1);
   });
-  $("#NFPyes").click(function() {
+  $("#no_accept").click(function() {
     prev = q1;
     disable(q1);
-    reveal(q3);
     stack.push(q1);
   });
 
-  // q2 btns
-  $("#businessSizeS").click(function() {
-    is_small = true;
-    is_medium = false;
+  //q2 buttons
+  $("#NFPno").click(function() {
     prev = q2;
     disable(q2);
     reveal(q3);
     stack.push(q2);
   });
-  $("#businessSizeM").click(function() {
-    is_medium = true;
-    is_small = false;
-    prev = q2;
-    disable(q2);
-    reveal(q4);
-    stack.push(q2);
-  });
-  $("#businessSizeL").click(function() {
-    is_small = false;
-    is_medium = false;
+  $("#NFPyes").click(function() {
     prev = q2;
     disable(q2);
     reveal(q4);
@@ -184,31 +175,41 @@ $(document).ready(function() {
   });
 
   // q3 btns
-  $("#payrollNo").click(function() {
-    payroll = false;
+  $("#businessSizeS").click(function() {
+    is_small = true;
+    is_medium = false;
     prev = q3;
     disable(q3);
     reveal(q4);
     stack.push(q3);
   });
-  $("#payrollYes").click(function() {
-    payroll = true;
+  $("#businessSizeM").click(function() {
+    is_medium = true;
+    is_small = false;
     prev = q3;
     disable(q3);
     reveal(q4);
     stack.push(q3);
+  });
+  $("#businessSizeL").click(function() {
+    is_small = false;
+    is_medium = false;
+    prev = q3;
+    disable(q3);
+    reveal(q5);
+    stack.push(q4);
   });
 
   // q4 btns
-  $("#bankYes").click(function() {
-    is_bank = true;
+  $("#payrollNo").click(function() {
+    payroll = false;
     prev = q4;
     disable(q4);
     reveal(q5);
     stack.push(q4);
   });
-  $("#bankNo").click(function() {
-    is_bank = false;
+  $("#payrollYes").click(function() {
+    payroll = true;
     prev = q4;
     disable(q4);
     reveal(q5);
@@ -216,15 +217,15 @@ $(document).ready(function() {
   });
 
   // q5 btns
-  $("#agroYes").click(function() {
-    is_agro = true;
+  $("#bankYes").click(function() {
+    is_bank = true;
     prev = q5;
     disable(q5);
     reveal(q6);
     stack.push(q5);
   });
-  $("#agroNo").click(function() {
-    is_agro = false;
+  $("#bankNo").click(function() {
+    is_bank = false;
     prev = q5;
     disable(q5);
     reveal(q6);
@@ -232,12 +233,29 @@ $(document).ready(function() {
   });
 
   // q6 btns
-  $("#revenuedropNo").click(function() {
+  $("#agroYes").click(function() {
+    is_agro = true;
     prev = q6;
     disable(q6);
+    reveal(q7);
+    stack.push(q6);
+  });
+  $("#agroNo").click(function() {
+    is_agro = false;
+    prev = q6;
+    disable(q6);
+    reveal(q7);
+    stack.push(q6);
+  });
+
+  // q7 btns
+  $("#revenuedropNo").click(function() {
+    prev = q7;
+    disable(q7);
     reveal(generalResult)
     reveal(workSharing)
     reveal(taxAll)
+
     //IF section to enable or disable result sections
     if ((is_small || is_nfp) && (payroll)) {
       reveal(loan);
@@ -254,14 +272,15 @@ $(document).ready(function() {
     if (is_bank) {
       reveal(impp);
     }
-    stack.push(q6);
+    stack.push(q7);
   });
   $("#revenuedropYes").click(function() {
-    prev = q6;
-    disable(q6);
+    prev = q7;
+    disable(q7);
     reveal(cews);
     reveal(workSharing)
     reveal(taxAll)
+
     //IF section to enable or disable result sections
     if ((is_small || is_nfp) && (payroll)) {
       reveal(loan);
@@ -278,7 +297,7 @@ $(document).ready(function() {
     if (is_bank) {
       reveal(impp);
     }
-    stack.push(q6);
+    stack.push(q7);
   });
 });
 
