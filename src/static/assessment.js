@@ -82,9 +82,6 @@ $(document).ready(function() {
   function init() {
     // reveal the first question/buttons
     window.history.pushState(null, document.title, "#q0");
-    for (var i = 1; i < qArray.length; i++) {
-      disable(qArray[i]);
-    }
     reveal(q0);
   }
 
