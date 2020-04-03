@@ -1,4 +1,4 @@
-// Copyright 2020 Queen's Printer for Ontario
+// Copyright 2020 rTraction
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -16,18 +16,23 @@ $(document).ready(function() {
     q3 = $("#q3"),
     q4 = $("#q4"),
     q5 = $("#q5"),
-    q6 = $("#q6");
+    q6 = $("#q6"),
+    q7 = $("#q7");
 
-  // RESULT PAGES
-  var emergencyInfo = $("#emergencyInfo"),
-    callNurse = $("#callNurse"),
-    selfIsolate = $("#selfIsolate"),
-    unlikelyCovid19 = $("#unlikelyCovid19"),
-    unlikelySick = $("#unlikelySick");
+  // RESULT "PAGES"
+  var generalResult = $("#generalResult"),
+    cews = $("#cews"),
+    fcc = $("#fcc"),
+    workSharing = $("#workSharing"),
+    impp = $("#impp"),
+    loan = $("#loan"),
+    loanguarantee = $("#loanguarantee"),
+    taxAll = $("#taxAll"),
+    hydro = $("#hydro");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
-  var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [unlikelySick, unlikelyCovid19, selfIsolate, callNurse, emergencyInfo];
+  var qArray = [q0, q1, q2, q3, q4, q5, q6, q7];
+  var rArray = [generalResult, cews, fcc, impp, loan, loanguarantee, workSharing, hydro, taxAll];
 
   var footer = $("footer");
 
@@ -77,6 +82,9 @@ $(document).ready(function() {
   function init() {
     // reveal the first question/buttons
     window.history.pushState(null, document.title, "#q0");
+    for (var i = 1; i < qArray.length; i++) {
+      disable(qArray[i]);
+    }
     reveal(q0);
   }
 
@@ -115,9 +123,19 @@ $(document).ready(function() {
     goBack("#q0");
   }
 
-  // ANSWERS
+  /*
+  ANSWERS - the variables are set when the according buttons are clicked.
+  The set variables then reveal the according result sections if "true".
+  This is done in the last question - see if clauses at bottom of script.
+  */
+
   var stack = [],
-    mildSymptoms = true;
+    payroll = true,
+    is_small = true,
+    is_medium = true,
+    is_agro = true,
+    is_bank = true,
+    is_nfp = true;
 
   // QUESTION YES/NO BUTTON ACTIONS
 
@@ -129,58 +147,69 @@ $(document).ready(function() {
     stack.push(q0);
   });
 
-  // q1 btns
-  $("#emergencyCheckYes").click(function() {
-    prev = q1;
-    disable(q1);
-    reveal(emergencyInfo);
-    stack.push(q1);
-  });
-  $("#emergencyCheckNo").click(function() {
+  //Disclaimer q1 buttons
+  $("#accept").click(function() {
     prev = q1;
     disable(q1);
     reveal(q2);
     stack.push(q1);
   });
-
-  // q2 btns
-  $("#emergencyCheckTwoYes").click(function() {
-    mildSymptoms = false;
+  $("#no_accept").click(function() {
     prev = q1;
-    disable(q2);
-    reveal(q4);
-    stack.push(q2);
+    disable(q1);
+    stack.push(q1);
   });
-  $("#emergencyCheckTwoNo").click(function() {
-    mildSymptoms = true;
+
+  //q2 buttons
+  $("#NFPno").click(function() {
     prev = q2;
     disable(q2);
     reveal(q3);
     stack.push(q2);
   });
+  $("#NFPyes").click(function() {
+    prev = q2;
+    disable(q2);
+    reveal(q4);
+    stack.push(q2);
+  });
 
   // q3 btns
-  $("#testingRequiredYes").click(function() {
+  $("#businessSizeS").click(function() {
+    is_small = true;
+    is_medium = false;
     prev = q3;
     disable(q3);
     reveal(q4);
     stack.push(q3);
   });
-  $("#testingRequiredNo").click(function() {
+  $("#businessSizeM").click(function() {
+    is_medium = true;
+    is_small = false;
     prev = q3;
     disable(q3);
-    reveal(unlikelySick);
+    reveal(q4);
     stack.push(q3);
+  });
+  $("#businessSizeL").click(function() {
+    is_small = false;
+    is_medium = false;
+    prev = q3;
+    disable(q3);
+    reveal(q5);
+    stack.push(q4);
   });
 
   // q4 btns
-  $("#exposedYes").click(function() {
+  $("#payrollNo").click(function() {
+    payroll = false;
     prev = q4;
     disable(q4);
-    reveal(callNurse);
+    reveal(q5);
     stack.push(q4);
   });
-  $("#exposedNo").click(function() {
+  $("#payrollYes").click(function() {
+    payroll = true;
     prev = q4;
     disable(q4);
     reveal(q5);
@@ -188,13 +217,15 @@ $(document).ready(function() {
   });
 
   // q5 btns
-  $("#closeContactYes").click(function() {
+  $("#bankYes").click(function() {
+    is_bank = true;
     prev = q5;
     disable(q5);
-    reveal(callNurse);
+    reveal(q6);
     stack.push(q5);
   });
-  $("#closeContactNo").click(function() {
+  $("#bankNo").click(function() {
+    is_bank = false;
     prev = q5;
     disable(q5);
     reveal(q6);
@@ -202,18 +233,80 @@ $(document).ready(function() {
   });
 
   // q6 btns
-  $("#closeContactWithSickYes").click(function() {
+  $("#agroYes").click(function() {
+    is_agro = true;
     prev = q6;
     disable(q6);
-    reveal(callNurse);
+    reveal(q7);
     stack.push(q6);
   });
-  $("#closeContactWithSickNo").click(function(event) {
-    event.preventDefault();
+  $("#agroNo").click(function() {
+    is_agro = false;
     prev = q6;
     disable(q6);
-    reveal(mildSymptoms ? unlikelyCovid19 : selfIsolate);
-    window.location.replace(mildSymptoms ? "#unlikelyCovid19" : "#selfIsolate");
+    reveal(q7);
     stack.push(q6);
+  });
+
+  // q7 btns
+  $("#revenuedropNo").click(function() {
+    prev = q7;
+    disable(q7);
+    reveal(generalResult)
+    reveal(workSharing)
+    reveal(taxAll)
+
+    //IF section to enable or disable result sections
+    if ((is_small || is_nfp) && (payroll)) {
+      reveal(loan);
+    }
+    if (is_small || is_medium) {
+      reveal(loanguarantee);
+    }
+    if (is_small) {
+      reveal(hydro);
+    }
+    if (is_agro) {
+      reveal(fcc);
+    }
+    if (is_bank) {
+      reveal(impp);
+    }
+    stack.push(q7);
+  });
+  $("#revenuedropYes").click(function() {
+    prev = q7;
+    disable(q7);
+    reveal(cews);
+    reveal(workSharing)
+    reveal(taxAll)
+
+    //IF section to enable or disable result sections
+    if ((is_small || is_nfp) && (payroll)) {
+      reveal(loan);
+    }
+    if (is_small || is_medium) {
+      reveal(loanguarantee);
+    }
+    if (is_small) {
+      reveal(hydro);
+    }
+    if (is_agro) {
+      reveal(fcc);
+    }
+    if (is_bank) {
+      reveal(impp);
+    }
+    stack.push(q7);
   });
 });
+
+/*
+if (payroll == true) {
+  reveal(nfpResult);
+  window.location.replace("#nfpResult");
+} else {
+  reveal(generalResult);
+  window.location.replace("#generalResult");
+}
+*/
