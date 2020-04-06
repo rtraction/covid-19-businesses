@@ -25,14 +25,14 @@ $(document).ready(function() {
     fcc = $("#fcc"),
     workSharing = $("#workSharing"),
     impp = $("#impp"),
-    loan = $("#loan"),
-    loanguarantee = $("#loanguarantee"),
+    ceba = $("#ceba"),
+    bcap = $("#bcap"),
     taxAll = $("#taxAll"),
     hydro = $("#hydro");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6, q7];
-  var rArray = [generalResult, cews, fcc, impp, loan, loanguarantee, workSharing, hydro, taxAll];
+  var rArray = [generalResult, cews, fcc, impp, ceba, bcap, workSharing, hydro, taxAll];
 
   var footer = $("footer");
 
@@ -159,12 +159,14 @@ $(document).ready(function() {
 
   //q2 buttons
   $("#NFPno").click(function() {
+    is_nfp = false;
     prev = q2;
     disable(q2);
     reveal(q3);
     stack.push(q2);
   });
   $("#NFPyes").click(function() {
+    is_nfp = true;
     prev = q2;
     disable(q2);
     reveal(q4);
@@ -255,10 +257,10 @@ $(document).ready(function() {
 
     //IF section to enable or disable result sections
     if ((is_small || is_nfp) && (payroll)) {
-      reveal(loan);
+      reveal(ceba);
     }
     if (is_small || is_medium) {
-      reveal(loanguarantee);
+      reveal(bcap);
     }
     if (is_small) {
       reveal(hydro);
@@ -280,10 +282,10 @@ $(document).ready(function() {
 
     //IF section to enable or disable result sections
     if ((is_small || is_nfp) && (payroll)) {
-      reveal(loan);
+      reveal(ceba);
     }
     if (is_small || is_medium) {
-      reveal(loanguarantee);
+      reveal(bcap);
     }
     if (is_small) {
       reveal(hydro);
