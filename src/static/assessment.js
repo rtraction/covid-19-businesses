@@ -14,6 +14,7 @@ $(document).ready(function() {
     q1 = $("#q1"),
     q2 = $("#q2"),
     q3 = $("#q3"),
+    q3_1 = $("#q3_1"),
     q4 = $("#q4"),
     q5 = $("#q5"),
     q6 = $("#q6"),
@@ -28,11 +29,12 @@ $(document).ready(function() {
     ceba = $("#ceba"),
     bcap = $("#bcap"),
     taxAll = $("#taxAll"),
+    taxAll = $("#csj"),
     hydro = $("#hydro");
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
-  var qArray = [q0, q1, q2, q3, q4, q5, q6, q7];
-  var rArray = [generalResult, cews, fcc, impp, ceba, bcap, workSharing, hydro, taxAll];
+  var qArray = [q0, q1, q2, q3, q3_1, q4, q5, q6, q7];
+  var rArray = [generalResult, cews, fcc, impp, ceba, bcap, workSharing, hydro, taxAll, csj];
 
   var footer = $("footer");
 
@@ -132,6 +134,7 @@ $(document).ready(function() {
     is_medium = true,
     is_agro = true,
     is_bank = true,
+    is_csj = true,
     is_nfp = true;
 
   // QUESTION YES/NO BUTTON ACTIONS
@@ -169,7 +172,7 @@ $(document).ready(function() {
     is_nfp = true;
     prev = q2;
     disable(q2);
-    reveal(q4);
+    reveal(q3_1);
     stack.push(q2);
   });
 
@@ -179,7 +182,7 @@ $(document).ready(function() {
     is_medium = false;
     prev = q3;
     disable(q3);
-    reveal(q4);
+    reveal(q3_1);
     stack.push(q3);
   });
   $("#businessSizeM").click(function() {
@@ -187,7 +190,7 @@ $(document).ready(function() {
     is_small = false;
     prev = q3;
     disable(q3);
-    reveal(q4);
+    reveal(q3_1);
     stack.push(q3);
   });
   $("#businessSizeL").click(function() {
@@ -197,6 +200,22 @@ $(document).ready(function() {
     disable(q3);
     reveal(q5);
     stack.push(q4);
+  });
+
+  // q3_1 btns
+  $("#CSJno").click(function() {
+    is_csj = false;
+    prev = q3_1;
+    disable(q3_1);
+    reveal(q4);
+    stack.push(q3_1);
+  });
+  $("#CSJyes").click(function() {
+    is_csj = true;
+    prev = q3_1;
+    disable(q3_1);
+    reveal(q4);
+    stack.push(q3_1);
   });
 
   // q4 btns
@@ -265,6 +284,9 @@ $(document).ready(function() {
     if (is_small) {
       reveal(hydro);
     }
+    if (is_csj) {
+      reveal(csj);
+    }
     if (is_agro) {
       reveal(fcc);
     }
@@ -289,6 +311,9 @@ $(document).ready(function() {
     }
     if (is_small) {
       reveal(hydro);
+    }
+    if (is_csj) {
+      reveal(csj);
     }
     if (is_agro) {
       reveal(fcc);
