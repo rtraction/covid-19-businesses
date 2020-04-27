@@ -281,7 +281,7 @@ $(document).ready(function() {
     if (is_small || is_medium) {
       reveal(bcap);
     }
-    if (is_small) {
+    if (is_small || is_agro) {
       reveal(hydro);
     }
     if (is_csj) {
@@ -309,7 +309,7 @@ $(document).ready(function() {
     if (is_small || is_medium) {
       reveal(bcap);
     }
-    if (is_small) {
+    if (is_small || is_agro) {
       reveal(hydro);
     }
     if (is_csj) {
